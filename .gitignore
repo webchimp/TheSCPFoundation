@@ -5,3 +5,4 @@ upload/
 temp/
 log/
 assets/styles/site.css
+php_error.log
