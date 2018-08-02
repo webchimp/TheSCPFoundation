@@ -1,0 +1,115 @@
+/*				   ______     _     __
+   ▀▀▀▀▀▀▀▀▀	  / ____/____(_)___/ /
+ █ ▀▀▀▀ ▀▀▀▀ █	 / / __/ ___/ / __  /
+ ▀ █ ▀▀▀▀▀ █ ▀	/ /_/ / /  / / /_/ /
+   ▀▀▀▀▀▀▀▀▀	\____/_/  /_/\__,_/
+									   */
+
+/**
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ Inner
+	+ Responsive grid
+		- Columns Mixin
+		- Rows Mixin
+
+	=======================================
+**/
+
+/* Inner */
+/* ---------------------------------------------------------------------------------------------- */
+
+.inner {
+
+	max-width: 100%;
+	.block-center();
+
+	@media screen and (min-width: @breakpoint_desktop) {
+
+		width: 1000px;
+		max-width: none;
+	}
+
+	@media screen and (min-width: @breakpoint_wide) {
+
+		width: 1200px;
+	}
+}
+
+/* Responsive grid */
+/*------------------------------------------------------------------------------------------------*/
+
+// Columns Mixin
+.generate-columns(@class, @n: 12, @i: 1) when (@i =< @n) {
+
+	& when(@i < @n) {
+		&.@{class}-@{i} { width: (@i/12)*100%; }
+		&.@{class}-offset-@{i} { margin-left: (@i/12)*100%; }
+	}
+
+	& when(@i = @n) {
+		&.@{class}-@{i} { width: (@i/12)*100%; margin-left: 0; }
+		&.@{class}-offset-@{i} { margin-left: 0; }
+	}
+
+	.generate-columns(@class, @n, (@i + 1));
+}
+
+// Rows Mixin
+.row(@class) {
+
+	.cf;
+	margin-left: -@margin_default;
+	margin-right: -@margin_default;
+
+	.col {
+
+		float: left;
+		position: relative;
+		min-height: 1px;
+		padding-left: @margin_default;
+		padding-right: @margin_default;
+	}
+
+	&.row-10 {
+
+		margin: 0 -10px;
+		& > .col { padding-left: 10px; padding-right: 10px; }
+	}
+
+	&.row-5 {
+
+		margin: 0 -5px;
+		& > .col { padding-left: 5px; padding-right: 5px; }
+	}
+
+	&.row-collapse {
+
+		margin: 0 0;
+		& > .col { padding-left: 0; padding-right: 0; }
+	}
+
+	.col {
+
+		.generate-columns(@class);
+
+		&.@{class}-fifth 	{ width: 100%/5; }
+		&.@{class}-seventh 	{ width: 100%/7; }
+		&.@{class}-eighth 	{ width: 100%/8; }
+		&.@{class}-ninth 	{ width: 100%/9; }
+	}
+}
+
+.row .col {
+
+	.box-sizing(border-box);
+	.background-clip(padding-box) !important;
+}
+
+.row-sm { .row(col-sm); }
+
+@media screen and (min-width: @breakpoint_tablet) { .row-md { .row(col-md); } }
+@media screen and (min-width: @breakpoint_desktop) { .row { .row(col); } }
+@media screen and (min-width: @breakpoint_wide) { .row-xl { .row(col-xl); } }

@@ -1,0 +1,644 @@
+/* _____           __  _
+  / ___/___  _____/ /_(_)___  ____  _____
+  \__ \/ _ \/ ___/ __/ / __ \/ __ \/ ___/
+ ___/ /  __/ /__/ /_/ / /_/ / / / (__  )
+/____/\___/\___/\__/_/\____/_/ /_/____/*/
+
+/* Home */
+/* ---------------------------------------------------------------------------------------------- */
+
+.page-home {
+
+	background: black;
+	padding-top: 0;
+
+	.site-header {
+
+		display: none;
+	}
+
+	.video {
+
+		.opacity(0.25);
+		.overlay-element();
+		z-index: 999;
+		overflow: hidden;
+	}
+
+	.intro {
+
+		overflow: hidden;
+		.overlay-element();
+		z-index: 1000;
+
+		.glitch {
+
+			.overlay-element();
+			width: 100%;
+			height: 100vh;
+			//background: url('../images/template/intro-background.png') center center no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+/* Directory */
+/* ---------------------------------------------------------------------------------------------- */
+
+.page-directory {
+
+	.series-list {
+
+		.series-chunk {
+
+			margin-bottom: 30px;
+			font-size: 1.5em;
+
+			.chunk-title {
+
+				font-size: 2em;
+				margin-bottom: 20px;
+			}
+
+			.object {
+
+				padding: 20px;
+				border-bottom: 1px solid #F1F1F1;
+				.transition(all 500ms);
+
+				&:hover {
+
+					background: #F1F1F1;
+				}
+
+				a {
+
+					display: block;
+					color: #bb0011;
+
+					small {
+
+						color: #544E52;
+					}
+				}
+
+				img {
+
+					position: absolute;
+					top: 0;
+					right: 0;
+					margin: 5px;
+					width: 50px;
+				}
+			}
+		}
+	}
+}
+
+/* Article */
+/* ---------------------------------------------------------------------------------------------- */
+
+.scp-article-cover {
+
+	@cover_height: 70%;
+	height: 0;
+	padding-top: @cover_height;
+	background-color: #F4F4F4;
+	background: url('../images/template/scp-pattern.png') center top repeat fixed;
+	margin-bottom: -@cover_height/2;
+
+	@media (min-width: @breakpoint_tablet) {
+
+		@cover_height: 25%;
+		padding-top: @cover_height;
+		margin-bottom: -@cover_height;
+	}
+
+	.has-cover & {
+
+		.background-size(cover);
+	}
+}
+
+.restricted-access-message {
+
+	text-align: center;
+	background-color: #222;
+	color: white;
+	margin-bottom: 20px;
+	padding-top: 10px;
+
+	h1 { color: #bb0011; }
+
+	p { border-top: 1px solid white; }
+}
+
+.site-navigation {
+
+	.navigation-title {
+
+		padding: 10px;
+		color: white;
+		font-size: 1.5em;
+	}
+
+	.menu {
+
+		.menu-item {
+
+			a {
+
+				display: block;
+				font-size: 1.2em;
+				padding: 10px;
+			}
+		}
+	}
+
+	.submenu {
+
+		.menu-item {
+
+			a {
+
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+.page-content,
+.scp-article {
+
+	background: white;
+	.box-sizing(border-box);
+	padding: 10px;
+
+	@media (min-width: @breakpoint_tablet) {
+
+		padding: 30px;
+	}
+
+	&.has-cover { margin-top: 15%; }
+	.is-restricted { display: none; }
+
+	.scp-object-class {
+
+		float: right;
+		width: 45px;
+
+		@media (min-width: @breakpoint_tablet) {
+
+			width: 70px;
+		}
+	}
+
+	.page-title,
+	.scp-title {
+
+		font-weight: normal;
+		font-size: 3em;
+
+		@media (min-width: @breakpoint_tablet) {
+
+			font-size: 4em;
+		}
+
+		.item-number-note {
+
+			font-size: 0.25em;
+			display: block;
+		}
+	}
+
+	.scp-nickname {
+
+		font-weight: normal;
+		font-size: 1.5em;
+		color: @muted_foreground;
+		margin-bottom: 30px;
+	}
+
+	.scp-esoteric-object-class {
+
+		font-weight: normal;
+		font-size: 1.2em;
+		color: @muted_foreground;
+		margin-bottom: 30px;
+		margin-top: -20px;
+	}
+
+	.scp-relations {
+
+		font-weight: normal;
+		color: @muted_foreground;
+		margin-bottom: 30px;
+		margin-top: -20px;
+		padding-left: 120px;
+		position: relative;
+		.cf;
+
+		span {
+
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			padding: 3px 0;
+			float: left;
+		}
+
+		a {
+
+			.inline-block();
+			padding: 3px 10px;
+			background: #bb0011;
+			color: white;
+			margin-right: 10px;
+			margin-bottom: 5px;
+		}
+	}
+
+	.the-content,
+	.scp-content {
+
+		a { color: #bb0011; }
+
+		.scp-description {
+
+			margin-bottom: 30px;
+			overflow: hidden;
+		}
+
+		.image-container.floatleft {
+
+			padding-left: 0;
+			float: left;
+		}
+
+		.image-container.floatright {
+
+			padding-right: 0;
+			float: right;
+		}
+
+		.scp-image-block {
+
+			max-width: 300px;
+
+			.scp-image, .image {
+
+				width: 100%;
+				margin-bottom: 10px;
+			}
+
+			.scp-image-caption {
+
+				font-size: 0.8em;
+				line-height: 1.2;
+				text-align: center;
+			}
+
+			&.block-right {
+
+				margin: 1em auto;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					margin: 0 0 1em 2em;
+					float: right;
+					clear: right;
+				}
+			}
+
+			&.block-left {
+
+				margin: 1em auto;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					float: left;
+					clear: left;
+					margin: 0 2em 1em 0;
+				}
+			}
+
+			&.block-center {
+
+				clear: both;
+				margin: 1em auto;
+			}
+		}
+
+		audio {
+
+			width: 100%;
+			display: block;
+			margin: 20px auto;
+		}
+
+		blockquote {
+
+			.box-sizing(border-box);
+			background: #F4F4F4;
+			padding: 20px;
+			font-family: 'Ubuntu Mono';
+			margin-bottom: 15px;
+
+			p {
+
+				margin-bottom: 5px;
+			}
+
+			audio {
+
+				margin: 0;
+				margin-left: -20px;
+				margin-right: -20px;
+				margin-top: -20px;
+				width: calc(~'100% + 40px');
+				margin-bottom: 20px;
+				border-bottom: 1px solid #CCC;
+			}
+		}
+
+		.content-panel {
+
+			margin-bottom: 15px;
+			border: 2px solid #F4F4F4;
+			clear: both;
+		}
+
+		.collapsible-block {
+
+			margin-bottom: 15px;
+			border: 2px solid #F4F4F4;
+			clear: both;
+
+			.collapsible-block-link {
+
+				background: #F4F4F4;
+				padding: 10px;
+				display: block;
+				font-family: 'Ubuntu Mono';
+				text-decoration: none;
+
+				&:hover {
+
+					background: #615A5F;
+					color: white;
+				}
+			}
+
+			.collapsible-block-content {
+
+				padding: 20px;
+				.cf;
+			}
+		}
+
+		.yui-navset {
+
+			.yui-nav {
+
+				.cf;
+				list-style-type: none;
+				margin: 0;
+
+				li {
+
+					float: left;
+					margin: 0;
+					margin-right: 10px;
+
+					a {
+
+						display: block;
+						padding: 10px;
+						background: lighten(#F0F0F0, 1%);
+					}
+
+					&.selected a {
+
+						background: #F0F0F0;
+					}
+				}
+			}
+
+			.yui-content {
+
+				background: #F0F0F0;
+				padding: 20px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.wiki-content-table {
+
+			width: 100%;
+			margin-bottom: @margin_default;
+
+			th {
+
+				line-height: 1;
+			}
+
+			th, td {
+
+				padding: 10px 12px;
+			}
+
+			& > thead > tr > th,
+			& > tfoot > tr > th {
+
+				text-align: left;
+			}
+
+			& > thead > tr,
+			& > tbody > tr {
+
+				border-bottom: 1px solid @default_border;
+			}
+
+			& > thead > tr{
+
+				border-bottom: 2px solid @default_border;
+			}
+
+			& > tfoot > tr {
+
+				border-top: 2px solid @default_border;
+			}
+
+			& > tbody > tr:nth-child(even) > td {
+
+				background: darken(@default_background, 5%);
+			}
+		}
+
+		iframe {
+
+			margin-bottom: 20px;
+		}
+
+		@sidebar_width: 250px;
+
+		.scp-sidebar {
+
+			.cf;
+			.box-sizing(border-box);
+			background-color: white;
+			margin: 0 auto;
+			padding: 20px;
+			position: fixed;
+			right: -80%;
+			height: 80vh;
+			top: 10vh;
+			width: 80%;
+
+			@media (min-width: @breakpoint_tablet) {
+
+				height: auto;
+				position: static;
+				width: @sidebar_width;
+				min-height: 100px;
+				float: right;
+				clear: right;
+				border-left: 1px solid #F0F0F0;
+			}
+
+			.scp-tag {
+
+				font-family: 'Ubuntu Mono';
+				text-align: center;
+				width: 46%;
+				height: 115px;
+				margin: 2%;
+				float: left;
+				margin-bottom: 0;
+				max-width: 95px;
+
+				span {
+
+					display: block;
+					margin-top: -10px;
+					font-size: 0.8em;
+					line-height: 1;
+				}
+			}
+		}
+
+		.scp-description {
+
+			@media (min-width: @breakpoint_tablet) {
+
+				margin-right: @sidebar_width + 10px;
+			}
+		}
+
+		.footnotes-footer {
+
+			.title {
+
+				font-size: @h3_size;
+			}
+		}
+	}
+
+	.page-navigation,
+	.objects-navigation {
+
+		.cf;
+		clear: both;
+
+		.fa {
+
+			line-height: 40px;
+			text-align: center;
+			width: 40px;
+			font-size: 28px;
+			color: white;
+		}
+
+		span {
+
+			font-size: 1.2em;
+			display: block;
+			color: white;
+			padding: 0 10px;
+			line-height: 40px;
+		}
+
+		.object-prev {
+
+			float: left;
+			background-color: #544E52;
+
+			span { float: right; }
+		}
+
+		.object-next {
+
+			float: right;
+			background-color: #544E52;
+
+			span { float: left; }
+		}
+	}
+
+	.objects-navigation {
+
+		@media (min-width: @breakpoint_tablet) {
+
+			background: fade(#F0F0F0, 95%);
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			left: 0;
+			z-index: 100;
+		}
+	}
+}
+
+.tooltip-content {
+
+	max-width: 500px;
+	padding: 20px;
+
+	.scp-object-class {
+
+		float: right;
+		width: 50px;
+		margin-top: -10px;
+	}
+
+	.page-title,
+	.scp-title {
+
+		font-weight: normal;
+		font-size: 2em;
+		margin-bottom: 5px;
+
+		.item-number-note {
+
+			font-size: 0.25em;
+			display: block;
+		}
+	}
+
+	.scp-nickname {
+
+		font-weight: normal;
+		font-size: 1.2em;
+		color: @muted_foreground;
+		margin-bottom: 15px;
+	}
+
+	p {
+
+		text-align: justify;
+		line-height: 1.1;
+		font-size: 0.9em;
+		margin-bottom: 0;
+	}
+}
