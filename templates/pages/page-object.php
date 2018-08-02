@@ -18,7 +18,7 @@
 			</ul>
 		</nav>
 		<section>
-			<div class="scp-article-cover page-cover" <?php if($cover = $scp->getMeta('cover')): ?>style="background-image: url('<?php  $site->urlTo("/files/{$scp->item_number}/{$cover}", true); ?>');"<?php endif; ?>></div>
+			<div class="scp-article-cover page-cover" <?php if($cover = $scp->getMeta('cover')): ?>style="background-image: url('<?php  $site->urlTo("/files/" . strtolower($scp->item_number) . "/{$cover}", true); ?>');"<?php endif; ?>></div>
 			<div class="inner boxfix-vert">
 				<div class="margins">
 					<div class="scp-article page-content <?php if($cover): ?>has-cover<?php endif; ?>">
