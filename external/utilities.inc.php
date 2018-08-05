@@ -229,6 +229,13 @@
 		$scp->save();
 	}
 
+	function prepare_dirs($text) {
+		global $site;
+		$text = str_replace('%baseDir%', $site->baseUrl('/'), $text);
+		$text = str_replace('%filesDir%', $site->baseUrl('/files/'), $text);
+		return $text;
+	}
+
 	function get_excerpt( $content, $length = 40, $more = '...' ) {
 		$excerpt = strip_tags( trim( $content ) );
 		$words = str_word_count( $excerpt, 2 );

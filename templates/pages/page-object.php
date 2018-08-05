@@ -37,14 +37,14 @@
 						<?php if($special_content = $scp->getMeta('special_content')): ?>
 
 							<div class="the-content scp-content">
-								<?php echo str_replace('%baseDir%', $site->baseUrl(''), $special_content); ?>
+								<?php echo prepare_dirs($special_content); ?>
 							</div>
 
 						<?php else: ?>
 
 							<?php if($scp->getMeta('pre_restricted_content')): ?>
 								<div class="the-content scp-content scp-pre-restricted-content">
-									<?php echo str_replace('%baseDir%', $site->baseUrl(''), $scp->getMeta('pre_restricted_content')); ?>
+									<?php echo prepare_dirs($scp->getMeta('pre_restricted_content')); ?>
 								</div>
 							<?php endif; ?>
 
@@ -52,7 +52,7 @@
 
 								<?php if($scp->getMeta('initial_content')): ?>
 									<div class="the-content scp-content scp-initial-content">
-										<?php echo str_replace('%baseDir%', $site->baseUrl(''), $scp->getMeta('initial_content')); ?>
+										<?php echo prepare_dirs($scp->getMeta('initial_content')); ?>
 									</div>
 								<?php endif; ?>
 
@@ -73,7 +73,7 @@
 
 										<h2 id="special-containment-procedures">Special Containment Procedures</h2>
 
-										<?php echo str_replace('%baseDir%', $site->baseUrl(''), $scp->special_containment_procedures); ?>
+										<?php echo prepare_dirs($scp->special_containment_procedures); ?>
 									</div>
 								<?php endif; ?>
 
@@ -96,10 +96,10 @@
 								</aside>
 
 								<div class="scp-description">
-									<?php echo $scp->getMeta('alternative_content') ? str_replace('%baseDir%', $site->baseUrl(''), $scp->getMeta('alternative_content')) : ''; ?>
+									<?php echo $scp->getMeta('alternative_content') ? prepare_dirs($scp->getMeta('alternative_content')) : ''; ?>
 									<?php if($scp->description): ?>
 										<h2 id="description">Description</h2>
-										<?php echo str_replace('%baseDir%', $site->baseUrl(''), $scp->description); ?>
+										<?php echo prepare_dirs($scp->description); ?>
 									<?php endif; ?>
 								</div>
 							</div>
