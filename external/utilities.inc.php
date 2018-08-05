@@ -232,7 +232,7 @@
 	function prepare_dirs($text) {
 		global $site;
 		$text = str_replace('%baseDir%', $site->baseUrl('/'), $text);
-		$text = str_replace('%filesDir%', $site->baseUrl('/files/'), $text);
+		$text = str_replace('%filesDir%', $site->getOption('files_dir', $site->baseUrl('/files/')), $text);
 		return $text;
 	}
 
