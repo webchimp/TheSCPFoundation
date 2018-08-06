@@ -13,7 +13,7 @@
 				<div class="warning">
 					<h2 class="warning-title animable">WARNING: THE FOUNDATION DATABASE IS</h2>
 					<h1 class="warning-classified animable">CLASSIFIED</h1>
-					<p class="warning-subtitle animable">ACCESS BY UNAUTHORIZED PERSONNEL IS STRICTLY PROHIBITED<br>PERPETRATORS WILL BE TRACKED, LOCATED, AND DETAINED</p>
+					<p class="warning-subtitle animable">ACCESS BY UNAUTHORIZED PERSONNEL IS STRICTLY PROHIBITED PERPETRATORS WILL BE TRACKED, LOCATED, AND DETAINED</p>
 					<p class="warning-cta animable"><a href="#" class="button button-outline">Access database</a></p>
 				</div>
 

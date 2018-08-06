@@ -36,6 +36,7 @@
 
 		.overlay-element();
 		display: flex;
+		overflow: hidden;
 		align-items: center;
 		justify-content: center;
 		z-index: 10;
@@ -46,23 +47,40 @@
 
 			text-align: center;
 			line-height: 1;
+			max-width: 90%;
 
 			h2 {
 
-				font-size: 1.3em;
+				font-size: 0.8em;
 				letter-spacing: 2px;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					font-size: 1.3em;
+					letter-spacing: 2px;
+				}
 			}
 
 			h1 {
-
-				font-size: 6.5em;
 				color: red;
+				font-size: 4.2em;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					font-size: 6.5em;
+				}
 			}
 
 			p {
 
 				font-weight: 300;
 				margin-bottom: 15px;
+				font-size: 0.8em;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					font-size: 1em;
+				}
 			}
 
 			.button-outline {
@@ -75,7 +93,8 @@
 
 		.login {
 
-			max-width: 600px;
+			width: 600px;
+			max-width: 90%;
 			margin: 0 auto;
 			text-align: center;
 
@@ -103,15 +122,20 @@
 
 			.login-credentials {
 
-				width: 300px;
-				.cf;
 				margin: 0 auto;
+				width: 250px;
+				.cf;
+
+				@media (min-width: @breakpoint_tablet) {
+
+					width: 300px;
+				}
 
 				input {
 
 					.box-sizing(border-box);
 					float: left;
-					width: 250px;
+					width: 200px;
 					display: block;
 					text-align: center;
 					background: none;
@@ -121,6 +145,11 @@
 					line-height: 35px;
 					padding: 5px;
 					font-size: 2.5em;
+
+					@media (min-width: @breakpoint_tablet) {
+
+						width: 250px;
+					}
 				}
 
 				button {
@@ -153,7 +182,11 @@
 		.series-chunk {
 
 			margin-bottom: 30px;
-			font-size: 1.5em;
+
+			@media (min-width: @breakpoint_tablet) {
+
+				font-size: 1.5em;
+			}
 
 			.chunk-title {
 
@@ -163,23 +196,33 @@
 
 			.object {
 
-				padding: 20px;
+				padding: 20px 0;
 				border-bottom: 1px solid #F1F1F1;
 				.transition(all 500ms);
+
+				@media (min-width: @breakpoint_tablet) {
+
+					padding: 20px;
+				}
 
 				&:hover {
 
 					background: #F1F1F1;
 				}
 
-				a {
+				p {
 
-					display: block;
-					color: #bb0011;
+					margin-right: 60px;
 
-					small {
+					a {
 
-						color: #544E52;
+						display: block;
+						color: #bb0011;
+
+						small {
+
+							color: #544E52;
+						}
 					}
 				}
 
@@ -385,7 +428,12 @@
 
 		.scp-image-block {
 
-			max-width: 300px;
+			max-width: 100%;
+
+			@media (min-width: @breakpoint_tablet) {
+
+				max-width: 300px;
+			}
 
 			.scp-image, .image {
 
@@ -395,6 +443,7 @@
 
 			.scp-image-caption {
 
+				max-width: 100%;
 				font-size: 0.8em;
 				line-height: 1.2;
 				text-align: center;
@@ -654,20 +703,33 @@
 
 		.fa {
 
-			line-height: 40px;
 			text-align: center;
-			width: 40px;
-			font-size: 28px;
 			color: white;
+			width: 30px;
+			line-height: 30px;
+			font-size: 14px;
+
+			@media (min-width: @breakpoint_tablet) {
+
+				font-size: 28px;
+				width: 40px;
+				line-height: 40px;
+			}
 		}
 
 		span {
 
-			font-size: 1.2em;
 			display: block;
 			color: white;
+			line-height: 30px;
+			font-size: 1em;
 			padding: 0 10px;
-			line-height: 40px;
+
+			@media (min-width: @breakpoint_tablet) {
+
+				padding: 0 10px;
+				font-size: 1.2em;
+			}
 		}
 
 		.object-prev {
@@ -689,15 +751,12 @@
 
 	.objects-navigation {
 
-		@media (min-width: @breakpoint_tablet) {
-
-			background: fade(#F0F0F0, 95%);
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-			left: 0;
-			z-index: 100;
-		}
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		z-index: 100;
+		background: fade(#F0F0F0, 95%);
 	}
 }
 
