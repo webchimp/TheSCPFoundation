@@ -11,33 +11,134 @@
 
 	background: black;
 	padding-top: 0;
+	overflow: hidden;
 
-	.site-header {
+	.site-header { display: none; }
 
-		display: none;
-	}
-
-	.video {
-
-		.opacity(0.25);
-		.overlay-element();
-		z-index: 999;
-		overflow: hidden;
-	}
-
-	.intro {
+	.glitch-wrapper {
 
 		overflow: hidden;
+		.opacity(0.125);
 		.overlay-element();
-		z-index: 1000;
+		z-index: 1;
 
 		.glitch {
 
 			.overlay-element();
 			width: 100%;
 			height: 100vh;
-			background: url('../images/template/intro-background.png') center center no-repeat;
+			background: url('../images/template/intro-background.jpg') center center no-repeat;
 			background-size: cover;
+		}
+	}
+
+	.intro {
+
+		.overlay-element();
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		color: white;
+		font-family: 'Roboto Condensed';
+
+		.warning {
+
+			text-align: center;
+			line-height: 1;
+
+			h2 {
+
+				font-size: 1.3em;
+				letter-spacing: 2px;
+			}
+
+			h1 {
+
+				font-size: 6.5em;
+				color: red;
+			}
+
+			p {
+
+				font-weight: 300;
+				margin-bottom: 15px;
+			}
+
+			.button-outline {
+
+				border-radius: 0;
+				text-transform: uppercase;
+				.button-outline-style(white, black);
+			}
+		}
+
+		.login {
+
+			max-width: 600px;
+			margin: 0 auto;
+			text-align: center;
+
+			img {
+
+				max-width: 40%;
+				display: block;
+				margin: 0 auto;
+			}
+
+			canvas {
+
+				display: block;
+				margin: 0 auto;
+			}
+
+			h2 {
+
+				font-size: 1.2em;
+				font-weight: 300;
+				text-transform: uppercase;
+				letter-spacing: 5px;
+				margin-bottom: 15px;
+			}
+
+			.login-credentials {
+
+				width: 300px;
+				.cf;
+				margin: 0 auto;
+
+				input {
+
+					.box-sizing(border-box);
+					float: left;
+					width: 250px;
+					display: block;
+					text-align: center;
+					background: none;
+					font-family: 'Ubuntu Mono';
+					border: 1px solid white;
+					color: white;
+					line-height: 35px;
+					padding: 5px;
+					font-size: 2.5em;
+				}
+
+				button {
+
+					.box-sizing(border-box);
+					float: right;
+					width: 50px;
+					display: block;
+					text-align: center;
+					background: white;
+					font-family: 'Ubuntu Mono';
+					border: 1px solid white;
+					color: black;
+					padding: 5px;
+					line-height: 35px;
+					font-size: 1.2em;
+				}
+			}
 		}
 	}
 }

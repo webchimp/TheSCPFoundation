@@ -22,6 +22,7 @@
 	# Include Google Fonts
 	$fonts = [
 		'Open Sans' => [300, 400, '400italic', 700, '700italic'],
+		'Roboto+Condensed' => [300, 400, 700],
 		'Lora' => [400, '400i', 700, '700i'],
 		'Ubuntu Mono' => [400, 700]
 	];
