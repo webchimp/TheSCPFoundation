@@ -108,10 +108,10 @@
 
 						<div class="objects-navigation">
 							<?php if($prev_scp): ?>
-								<a href="<?php $site->urlTo('/object/' . strtolower($prev_scp), true); ?>" class="object-prev"><i class="fa fa-fw fa-angle-left"></i> <span class="object-title"><?php echo $prev_scp; ?></span></a>
+								<a href="<?php $site->urlTo('/object/' . strtolower($prev_scp), true); ?>" class="objects-navigation-button object-prev"><i class="fa fa-fw fa-angle-left"></i> <span class="object-title"><?php echo $prev_scp; ?></span></a>
 							<?php endif; ?>
 							<?php if($next_scp): ?>
-								<a href="<?php $site->urlTo('/object/' . strtolower($next_scp), true); ?>" class="object-next"><span class="object-title"><?php echo $next_scp; ?></span> <i class="fa fa-fw fa-angle-right"></i></a>
+								<a href="<?php $site->urlTo('/object/' . strtolower($next_scp), true); ?>" class="objects-navigation-button object-next"><span class="object-title"><?php echo $next_scp; ?></span> <i class="fa fa-fw fa-angle-right"></i></a>
 							<?php endif; ?>
 						</div>
 					</div>

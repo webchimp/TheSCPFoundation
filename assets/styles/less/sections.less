@@ -272,6 +272,7 @@
 	color: white;
 	margin-bottom: 20px;
 	padding-top: 10px;
+	font-family: Roboto;
 
 	h1 { color: #bb0011; }
 
@@ -729,24 +730,43 @@
 			@media (min-width: @breakpoint_tablet) {
 
 				padding: 0 10px;
+				line-height: 40px;
 				font-size: 1.2em;
 			}
 		}
 
-		.object-prev {
+		.objects-navigation-button {
 
-			float: left;
-			background-color: #544E52;
+			overflow: hidden;
+			position: relative;
 
-			span { float: right; }
-		}
+			&:before {
 
-		.object-next {
+				content: '';
+				.overlay-element();
+				z-index: 0;
+				width: 0;
+				background: rgba(255, 255, 255, 0.125);
+				.transition(all 500ms);
+			}
 
-			float: right;
-			background-color: #544E52;
+			&:hover { &:before { width: 100%; } }
 
-			span { float: left; }
+			&.object-prev {
+
+				float: left;
+				background-color: #544E52;
+
+				span { float: right; }
+			}
+
+			&.object-next {
+
+				float: right;
+				background-color: #544E52;
+
+				span { float: left; }
+			}
 		}
 	}
 
